@@ -36,6 +36,9 @@
 * Update incorrect online help URLs
 * Add ResourceId parameter to Get-AzNetworkInterface
 * Improved error handling for Get-AzVpnClientRevokedCertificate, Get-AzVpnClientRootCertificate
+* Improved Subnet, Primary, PrivateIpAddressVersion parameters processing in
+    - Add-AzNetworkInterfaceIpConfig
+    - Set-AzNetworkInterfaceIpConfig
 
 ## Version 1.0.0
 * Added support for the configuring RewriteRuleSets in the Application Gateway
