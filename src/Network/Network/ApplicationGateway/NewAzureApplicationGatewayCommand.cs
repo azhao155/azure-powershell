@@ -158,6 +158,12 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(
             Mandatory = false,
             ValueFromPipelineByPropertyName = true,
+            HelpMessage = "Firewall configuration")]
+        public virtual PSApplicationGatewayWebApplicationFirewallPolicy FirewallPolicy { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            ValueFromPipelineByPropertyName = true,
             HelpMessage = "Autoscale Configuration")]
         public virtual PSApplicationGatewayAutoscaleConfiguration AutoscaleConfiguration { get; set; }
 
@@ -307,6 +313,11 @@ namespace Microsoft.Azure.Commands.Network
             if (this.WebApplicationFirewallConfiguration != null)
             {
                 applicationGateway.WebApplicationFirewallConfiguration = this.WebApplicationFirewallConfiguration;
+            }
+
+            if (this.FirewallPolicy != null)
+            {
+                applicationGateway.FirewallPolicy = this.FirewallPolicy;
             }
 
             if (this.AutoscaleConfiguration != null)
