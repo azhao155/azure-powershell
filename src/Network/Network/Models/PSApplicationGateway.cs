@@ -57,7 +57,7 @@ namespace Microsoft.Azure.Commands.Network.Models
 
         public PSApplicationGatewayWebApplicationFirewallConfiguration WebApplicationFirewallConfiguration { get; set; }
 
-        public PSApplicationGatewayWebApplicationFirewallPolicy FirewallPolicy { get; set; }
+        public PSResourceId FirewallPolicy { get; set; }
 
         public PSApplicationGatewayAutoscaleConfiguration AutoscaleConfiguration { get; set; }
 
@@ -150,6 +150,12 @@ namespace Microsoft.Azure.Commands.Network.Models
         public string UrlPathMapsText
         {
             get { return JsonConvert.SerializeObject(UrlPathMaps, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }); }
+        }
+
+        [JsonIgnore]
+        public string FirewallPolicyText
+        {
+            get { return JsonConvert.SerializeObject(FirewallPolicy, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }); }
         }
     }
 }
